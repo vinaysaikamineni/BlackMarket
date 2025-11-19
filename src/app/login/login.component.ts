@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
     if (this.email === 'admin@gmail.com' && this.password === '123456') {
       //alert("Login successful!");
+      localStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['/dashboard']);
     } else {
       alert("Invalid username or password");

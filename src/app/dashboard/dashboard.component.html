@@ -1,15 +1,16 @@
 <div class="layout">
 
   <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <aside [class.collapsed]="isSidebarCollapsed" class="sidebar">
     <h2 class="logo">MyApp</h2>
 
     <ul class="menu">
-      <li>🏠 Dashboard</li>
-      <li>👤 Users</li>
-      <li>📊 Reports</li>
-      <li>⚙️ Settings</li>
+      <li routerLink="/dashboard">🏠 Dashboard</li>
+      <li routerLink="/users">👤 Users</li>
+      <li routerLink="/reports">📊 Reports</li>
+      <li routerLink="/settings">⚙️ Settings</li>
     </ul>
+
   </aside>
 
   <!-- MAIN AREA -->
@@ -17,7 +18,8 @@
 
     <!-- NAVBAR -->
     <nav class="navbar">
-      <div></div> <!-- empty space (left) -->
+      <div class="hamburger" (click)="toggleSidebar()">☰</div>
+ <!-- empty space (left) -->
 
       <div class="navbar-right">
         <span class="profile">👤</span>

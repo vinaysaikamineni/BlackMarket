@@ -25,6 +25,12 @@ rowData = [
   { name: 'Michael Brown', email: 'michael@gmail.com', role: 'Editor' },
 ];
 
+isSidebarCollapsed = false;
+
+toggleSidebar() {
+  this.isSidebarCollapsed = !this.isSidebarCollapsed;
+}
+
 
 // BAR CHART
 barChartData: ChartData<'bar'> = {
@@ -73,6 +79,7 @@ pieChartOptions: ChartOptions<'pie'> = {
 
 
   logout() {
+    localStorage.removeItem('isLoggedIn');
     this.router.navigate(['/login']);
   }
 }

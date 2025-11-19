@@ -70,6 +70,15 @@
   flex-direction: column;
 }
 
+.main-content {
+  margin-left: fill-available;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main-content {
+  margin-left: 70px;
+}
+
 /* NAVBAR */
 .navbar {
   height: 60px;
@@ -141,10 +150,42 @@
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .sidebar {
-    display: none; 
+    position: absolute;
+    z-index: 1000;
+    height: 100vh;
   }
 
-  .navbar {
-    justify-content: space-between;
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar.collapsed {
+    width: 0;
   }
 }
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sidebar {
+  width: 240px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar .menu li {
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.sidebar.collapsed .menu li {
+  opacity: 0;
+}
+
