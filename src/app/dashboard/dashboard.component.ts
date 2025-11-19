@@ -48,7 +48,7 @@ barChartData: ChartData<'bar'> = {
 barChartOptions: ChartOptions<'bar'> = {
   responsive: true,
   plugins: {
-    legend: { display: true }
+    legend: { display: false }
   }
 };
 
@@ -71,7 +71,7 @@ pieChartOptions: ChartOptions<'pie'> = {
   responsive: true,
   plugins: {
     legend: {
-      display: true,
+      display: false,
       position: 'bottom'
     }
   }
